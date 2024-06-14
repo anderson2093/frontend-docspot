@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+/* user-avatar.component.css */
+.circle-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #23455c;
+  /* Cambia el color de fondo según tus preferencias */
+  color: #ffffff;
+  /* Cambia el color del texto según tus preferencias */
+  font-weight: bold;
+}

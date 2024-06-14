@@ -1,0 +1,39 @@
+// .blur-backdrop {
+//     background-color: rgba(0, 0, 0, 0.75);
+//     backdrop-filter: blur(5px);
+// }
+
+// .blocked-dialog .mat-dialog-container {
+//     border-radius: 10px ;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     overflow: hidden;
+
+//     &>* {
+//         width: 100%;
+//     }
+// }
+
+// .loadingDialog .mat-dialog-container{
+//     padding: 0;
+//     overflow: hidden;
+//     margin: auto;
+// }
+
+// .createUserDialog .mat-dialog-container {
+//     padding: 0;
+// }
+
+// .loadingDialog ::ng-deep.mat-mdc-dialog-container.mdc-dialog__surface {
+//     box-shadow: none !important;
+//     background-color: transparent !important;
+// }
+
+// :host{
+
+//     ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+//         box-shadow: none !important;
+//         background-color: transparent !important;
+//     }
+// }

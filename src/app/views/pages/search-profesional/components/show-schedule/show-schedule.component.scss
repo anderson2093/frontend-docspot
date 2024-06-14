@@ -1,0 +1,112 @@
+.turno {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // gap: 16px;
+    width: 100%;
+    min-width: 20rem;
+    max-width: 30rem;
+
+    #fechas {
+        display: flex;
+        width: 100%;
+        // padding-inline: 0.8rem;
+        margin-bottom: -16px;
+
+        .block-fecha {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            // gap: 16px;
+
+            .fecha-container {
+                padding: 12px;
+                background-color: transparent;
+
+                .fecha-container-2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-items: center;
+                    align-items: center;
+                    padding: .8rem .8rem 1.6rem;
+                    min-width: 6rem;
+                    margin-bottom:16px;
+
+                    border: 1px solid black;
+                    border-radius: 16px;
+                    background-color: yellow;
+
+                    .fecha-short {
+                        color: red;
+                    }
+
+                    .fecha-name {
+                        color: red;
+                        font-size: 1.25rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        } 
+    }
+
+    /* segun dia */
+    #horas {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:16px;
+        width: 100%;
+
+        background-color: orange;
+        padding: 16px;
+        border-radius: 16px;
+        z-index: 2;
+
+        .hora {
+            border-radius: 8px;
+            background-color: yellowgreen;
+            font-weight: 500;
+            color:red;
+
+            padding: 8px 16px;
+
+            
+        }
+
+        .hora:hover {
+            background-color: green;
+        }
+    }
+
+}
+
+.swiper,swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block
+}
+
+.swiper-horizontal {
+    touch-action: pan-y
+}
+
+.swiper-gallery {
+    --swiper-navigation-size: 2.8rem;
+    --swiper-navigation-sides-offset: 1.6rem
+}
+
+.select {
+    background-color: orange !important;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.selectHour {
+    background-color: darkgreen !important;
+}

@@ -1,0 +1,45 @@
+<div class="card">
+  <form class="row" [formGroup]="doctorFiltersForm">
+    <div class="col-lg-3 col-12">
+      <label class="fw-semibold">Especialidades</label>
+      <p-dropdown
+        [options]="specialties"
+        appendTo="body"
+        optionLabel="nameSpecialty"
+        optionValue="idSpecialty"
+        placeholder="Seleccione una especialidad"
+        formControlName="idSpecialty"
+        styleClass="w-100"
+      ></p-dropdown>
+    </div>
+    <div class="col-lg-2 col-12">
+      <button
+        pButton
+        class="search-button"
+        label="Buscar"
+        (click)="getProfessionalsBySpecialtyId()"
+        [style]="{ marginLeft: '0rem' }"
+      ></button>
+    </div>
+    <div class="col-lg-2 col-12 first-button">
+      <button
+          pButton
+          label="Puntuación"
+          [icon]="descendantReputation ? 'pi pi-arrow-down' : 'pi pi-arrow-up'"
+          iconPos="right"
+          (click)="sortReputation()"
+          styleClass="fw-normal"
+        ></button>
+      </div>
+      <div class="col-lg-2 col-12 second-button">
+        <button
+          pButton
+          label="Precio"
+          [icon]="descendantPrice ? 'pi pi-arrow-down' : 'pi pi-arrow-up'"
+          iconPos="right"
+          (click)="sortPrice()"
+          styleClass="fw-normal"
+        ></button>
+      </div>
+    </form>
+</div>

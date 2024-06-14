@@ -1,0 +1,26 @@
+<div
+  [@slideInOut]="isLogin ? 'in' : 'out'"
+  class="flex-container"
+  [ngClass]="{ 'justify-end': isLogin, 'justify-start': !isLogin }"
+>
+  <div class="content-container">
+    @if (isLogin) {
+    <ng-container>
+      <div class="login-form">
+        <h2>Login Form</h2>
+        <app-login></app-login>
+        <button (click)="toggleForm()">Register</button>
+      </div>
+    </ng-container>
+    } @else {
+    <ng-container>
+      <div class="register-form">
+        <h2>Register Form</h2>
+        <app-register></app-register>
+        <button (click)="toggleForm()">Back to Login</button>
+      </div>
+    </ng-container>
+    }
+  </div>
+  <div></div>
+</div>

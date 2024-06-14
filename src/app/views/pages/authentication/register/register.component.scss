@@ -1,0 +1,192 @@
+.RegisterContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    .divImage {
+        width: 100%;
+        max-width: 60%;
+        background-color: #fafafa;
+    }
+
+    .container {
+        border: 2px solid gray;
+        border-radius: 16px;
+        min-width: 300px;
+        min-height: 100vh;
+        width: 40%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        padding: 16px;
+
+        .selectRol {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 16px;
+            width: 100%;
+            margin: 16px 0;
+
+            h1 {
+                text-align: center;
+            }
+
+            p {
+                display: inline-block;
+                margin: 0;
+            }
+
+            .seccionBtn {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+
+                gap: 8px;
+                justify-content: center;
+                align-items: center;
+
+                .btn-select {
+                    color: white;
+                    background-color: #4351af;
+                }
+
+                .btn-unselect {
+                    color: black;
+                    background-color: white;
+                    opacity: 0.5;
+                }
+
+                button:hover {
+                    opacity: 1 !important;
+                }
+            }
+
+            .btn-column {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                gap: 24px;
+                margin-top: 20px;
+                max-width: 130px;
+                align-items: unset;
+            }
+
+        }
+
+        .btn-clicked {
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .chip-section {
+                margin-bottom: 12px;
+            }
+
+            #chipElement {
+                background-color: #c2c8f577;
+            }
+
+            #chipElement:hover {
+                color:black;
+                background-color: #dbdfff;
+
+                ::ng-deep .mat-mdc-chip.mdc-evolution-chip--with-trailing-action .mat-mdc-chip-action-label {
+                    font-weight: 700;
+                }
+            }
+
+            .form-patient {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                &__content1{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    flex: 1;
+
+                    &__work {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        gap: 16px;
+
+                        .field { 
+                            min-width: 200px;
+                            flex:1;
+                        }
+                    }
+                }
+
+                &__content2 {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    width: 100%;
+                    margin: 8px 0px;
+
+                    > * {
+                        flex: 1;
+                        max-width: 500px;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+.RegisterContainer {
+    .container {
+
+        span{
+            text-align: center;
+        
+            a {
+                font-weight: 500;
+                cursor: pointer;
+                text-decoration: underline;
+                color:blue;
+            }
+        }
+    }
+}
+
+// ::ng-deep .mdc-text-field--outlined .mat-mdc-form-field-infix {
+//     min-height: 32px;
+//     padding-top: 12px;
+//     padding-bottom: 12px;
+// }
+
+// ::ng-deep .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+//     top: 16px;
+// }
+
+// funciona
+// ::ng-deep .mat-mdc-chip.mdc-evolution-chip--with-trailing-action .mat-mdc-chip-action-label {
+//     color: black;
+// }
+
+// funciona
+// ::ng-deep .mat-mdc-chip.mdc-evolution-chip--with-trailing-action .mat-mdc-chip-action-label:hover {
+//     font-weight: 700;
+// }
+
+// ::ng-deep .mdc-evolution-chip__text-label mat-mdc-chip-action-label:hover {
+//     color: black;
+//     font-weight: 500;
+// }

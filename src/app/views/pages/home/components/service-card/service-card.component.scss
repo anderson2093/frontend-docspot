@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+.card {
+  padding: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  max-width: 300px;
+  height: 400px;
+  float: left;
+  margin: 8rem 2.5rem;
+}
+.icon {
+  margin: 1.5rem 0;
+  border-radius: 50%;
+  //No sé si sea necesario el overflow
+  //overflow: hidden;
+  width: 4rem;
+  height: 4rem;
+  // No sé si sea necesario lo de las fonts
+  // font-size: 2rem;
+  // font-weight: normal;
+  // text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1184px) {
+  .card {
+    margin: 1.5rem 2.5rem;
+    float: none;
+  }
+}

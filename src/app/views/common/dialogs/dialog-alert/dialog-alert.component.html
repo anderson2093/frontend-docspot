@@ -1,0 +1,18 @@
+<div class="dialog">
+    <mat-icon color="error">warning</mat-icon>
+
+    <div class="content">
+        <h1 *ngIf="data?.tittle">{{data.tittle}}</h1>
+        <p *ngIf="data?.content" class="msg">{{data.content}}</p>
+    </div>
+
+    <div mat-dialog-actions>
+        <ng-container *ngIf="data?.actions">
+            <button *ngFor="let action of data.actions"
+            [ngClass]="(action.style)?(action.style):('btn_standard')"
+            [mat-dialog-close]="action.returnValue">
+                {{action.name}}
+            </button>
+        </ng-container>
+    </div>
+</div>

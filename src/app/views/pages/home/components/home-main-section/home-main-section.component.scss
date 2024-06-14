@@ -1,0 +1,21 @@
+section {
+  background: linear-gradient(192deg, #f3f4f6 53%, #8ACBDF 92%, #007893 100%) ;
+}
+a {
+  background: #19B2DD;
+  border: 1px solid rgb(25, 178, 221);
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: bottom;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+  font-weight: 500;
+  width: 235px;
+}

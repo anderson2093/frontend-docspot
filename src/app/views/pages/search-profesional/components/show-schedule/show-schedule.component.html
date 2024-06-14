@@ -1,0 +1,34 @@
+<div class="turno">
+  @if(this.loading){
+    <section id="fechas">
+      <mat-spinner></mat-spinner>
+    </section>
+  } @else {
+  <!-- days -->
+  <section id="fechas" class="swiper swiper-backface-hidden swiper-initialized swiper-gallery swiper-horizontal">
+    <div class="block-fecha swiper-container swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+      @for (day of this.days; track $index) {
+      <div class="fecha-container swiper-slide" 
+      [ngClass]="day.fecha == this.daySelect.fecha ? 'select':''"
+      (click)="showHours(day)">
+        <div class="fecha-container-2">
+          <div class="fecha-name">{{ getDayName(day.fecha) }}</div>
+          <div class="fecha-short">{{ getDayShort(day.fecha) }}</div>
+        </div>
+      </div>
+      }
+    </div>
+  </section>
+
+    @if(this.hoursAvailable.length > 0){
+      <!-- horas -->
+      <section id="horas">
+        @for (hour of hoursAvailable; track $index) {
+          <!-- [ngClass]="hour == this.hourSelect ? 'selectHour':''" -->
+          <div class="hora" 
+          (click)="selectHours(hour)">{{ getHourShort(hour.hour )}}</div>
+        }
+      </section>
+    }
+  }
+</div>

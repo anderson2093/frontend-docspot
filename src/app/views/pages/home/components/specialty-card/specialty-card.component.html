@@ -1,0 +1,14 @@
+@for (specialty of specialties; track $index) {
+  <div class="card">
+    <section class="w-100 text-center">
+      <figure class="icon">
+        <img class="w-100 h-100" [src]="specialty.icon" [alt]="specialty.alt">
+      </figure>
+    </section>
+    <section>
+      <p class="fw-bold text-center">
+        {{ specialty.title }}
+      </p>
+    </section>
+  </div>
+}

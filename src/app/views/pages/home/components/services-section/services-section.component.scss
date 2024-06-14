@@ -1,0 +1,13 @@
+.title, .subtitle {
+  font-size: 2rem;
+}
+
+
+@media (max-width: 1184px) {
+  header, footer {
+    text-wrap: pretty;
+  }
+  .title, .subtitle {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,120 @@
+<div class="LoginContainer">
+  <div class="divImage"
+  [style.view-transition-name]="'transition-img'">
+    <!-- image -->
+    <img src="assets/images/doctor-login.jpg" alt="Imagen de doctor" style="width: 100%; height: 100%;object-fit: cover;">
+  </div>
+  <div class="container"
+  [style.view-transition-name]="'transition-form'">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <!-- title -->
+      <div class="form-title">
+        <h1 [style.view-transition-name]="'transition-title'">Bienvenido a DocSpot</h1>
+        <div class="slogan"
+        [style.view-transition-name]="'transition-subtitle'">
+          <!-- <p>Tu médico siempre contigo, en tu móvil.</p> -->
+          <p>Atención médica personalizada</p>
+          <p>a tu alcance</p>
+        </div>
+      </div>
+
+      @if (errorMessage) {
+        <div class="alert alert-danger" style="max-width: 500px; width: 70%; margin-left: auto; margin-right: auto;">
+          {{ errorMessage }}
+        </div>
+      }
+
+
+
+      <!-- input email -->
+      <div class="form-group">
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Correo electrónico"
+        />
+        @if ( loginForm.controls['email'].invalid &&
+        loginForm.controls['email'].touched ) {
+        <div class="text-danger">
+          @if (loginForm.controls['email'].errors?.['required']) {
+          <div class="errors">El correo electrónico es <strong>obligatorio</strong>.</div>
+          } @else if (loginForm.controls['email'].errors?.['email']) {
+          <div class="errors">Ingrese un correo electrónico <strong>válido</strong>.</div>
+          }
+        </div>
+        }
+      </div>
+
+      <!-- input password -->
+      <div class="form-group">
+        <div class="input-group">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            class="form-control"
+            placeholder="Contraseña"
+            >
+          <button
+            type="button"
+            class="btn btn-outline-secondary d-flex align-items-center justify-content-center"
+            (click)="togglePasswordVisibility()"
+          >
+            <i class="material-icons">
+              {{ showPassword ? "visibility_off" : "visibility" }}
+            </i>
+          </button>
+        </div>
+
+        @if (
+          loginForm.controls['password'].invalid &&
+            loginForm.controls['password'].touched
+        ) {
+          <div class="text-danger">
+            @if (loginForm.controls['password'].errors?.['required']) {
+              <div class="errors">
+                La contraseña es <strong>obligatoria</strong> .
+              </div>
+            } @else if (loginForm.controls['password'].errors?.['minlength']) {
+              <div class="errors">
+                La contraseña debe tener al menos 6 caracteres.
+              </div>
+            }
+          </div>
+        }
+
+
+      </div>
+
+      <!-- buttons section -->
+      <div class="form-buttons">
+
+        <!-- class="btn btn-primary btn-login" -->
+        <button mat-raised-button color="primary" type="submit" >
+          @if (loading){
+            <mat-progress-spinner diameter="24"  mode="indeterminate" class="spinner"></mat-progress-spinner>
+          }
+          <span [ngClass]="!loading ? 'text1':'text2'">Iniciar sesión</span>
+        </button>
+
+        <span class="mt-5"
+        [style.view-transition-name]="'transition-cuenta'">
+          ¿Aún no tienes una cuenta?
+        </span>
+        <span class=""
+        [style.view-transition-name]="'transition-cuentaLink'">
+          <a (click)="navRegister()">Regístrate aquí</a>
+        </span>
+
+        <!-- <button mat-raised-button
+        (click)="navRegister()"
+        class="btn btn-outline-secondary btn-register">
+          <span>Registrarse</span>
+        </button> -->
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<header class="container-fluid d-flex align-items-center position-fixed top-0 justify-content-between bg-white z-1"
+  style="padding: 1rem 2.5rem;">
+  <!-- <div>
+    <p class="text-start" style="font-size: 2rem; line-height: 1.25; font-weight: 600;">Logo</p>
+  </div> -->
+  <figure class="m-0">
+    <img src="assets/images/docspot-logo-nobg.png" style="cursor: pointer;" height="86" width="86" alt="Logo"
+      [routerLink]="['/home']">
+  </figure>
+  <nav>
+    <ul class="d-flex justify-content-center"
+      style="height: 1.5rem; list-style-type: none; gap: 3rem; padding: 0.5rem; font-weight: 500;">
+      @for (item of menuItems; track $index) {
+      <li>
+        <a style="text-decoration: none; color: #000;" [routerLink]="[item.path]">
+          {{ item.label }}
+        </a>
+      </li>
+      }
+
+      @if(!name){
+      <span class="d-flex" style="gap: 0.5rem;">
+        <li style="font-weight: 500;">
+          <a style="border: 1px solid #19b2dd; color: #19b2dd; padding: 0.5rem 0.75rem; text-decoration: none; border-radius: 8px"
+            [routerLink]="['/auth/login']">
+            Iniciar Sesión
+          </a>
+        </li>
+        <li style="font-weight: 500;">
+          <a style="border: 1px solid #19b2dd; background-color: #19b2dd; padding: 0.5rem 0.75rem; text-decoration: none; border-radius: 8px; color: #fff;"
+            [routerLink]="['/auth/register']">
+            Registrarse
+          </a>
+        </li>
+      </span>
+      } @else {
+      <span class="d-flex align-items-center" style="gap: 0.5rem; margin-top: 0.75rem;">
+        <li mat-button [matMenuTriggerFor]="userMenu" class="mat-menu-panel circle-avatar">
+          {{ initial }}
+        </li>
+        <mat-menu #userMenu="matMenu">
+          <button mat-menu-item [routerLink]="['/profile']">Mi Perfil</button>
+          <button mat-menu-item (click)="logout()">Cerrar Sesión</button>
+        </mat-menu>
+      </span>
+
+      }
+
+    </ul>
+  </nav>
+</header>

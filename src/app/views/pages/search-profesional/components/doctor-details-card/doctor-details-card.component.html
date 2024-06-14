@@ -1,0 +1,23 @@
+<div class="d-flex flex-wrap">
+  @for (professional of this.professionals; track $index) {
+  <div class="card">
+    <div class="w-100 h-100 text-center" >
+      <img [src]="professional.urlPhoto" alt="Foto del doctor">
+    </div>
+    <div class="text-start w-100" style="width: 100%">
+      <p class="fw-bold" style="font-size: 2rem; margin: 0.5rem;">
+        {{ professional.nameProfessional }}
+      </p>
+    </div>
+    <div class="text-start fw-bold w-100" style="margin: 0.5rem; font-size: .875rem;">
+      {{ professional.nameSpecialty }}
+    </div>
+    <div class="w-100" style=" margin: 1rem 0.5rem;">
+      <p-rating [(ngModel)]="professional.reputation" [cancel]="false" [readonly]="true" [stars]="5" />
+    </div>
+    <div class="text-start w-100" style="font-weight: 400; font-size: 1.25rem; margin: 0.5rem;">
+      {{ professional.valueQuery | currency:'USD' }}
+    </div>
+  </div>
+  }
+</div>
